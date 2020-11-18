@@ -71,3 +71,76 @@ jobs:
           # white_list: "debugger-action"
           account_type: org
           rename_dst: true
+
+      - name: mirror github/wei
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/wei
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "ssr-scraper,pull,git-sync,minifier"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/repo-sync
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/repo-sync
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "pull-request,github-sync,repo-sync"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/deepfakes
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/deepfakes
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "faceswap"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/instantbox
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/instantbox
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "instantbox"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/listen-now
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/listen-now
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "listen-now,listen-now-react,listen-now-desktop"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/mozilla
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/mozilla
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "send,DeepSpeech"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
