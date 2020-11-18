@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  repo-sync:
+  mirror:
     env:
       PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: sync github/P3TERX
+      - name: mirror github/P3TERX
         uses: fakedon/hub-mirror@main
         with:
           src: github/P3TERX
@@ -32,6 +32,6 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           #static_list: "debugger-action"
-          white_list: "debugger-action,ssh2actions,ActionsVM,ca-certificates.crt,GeoLite.mmdb,OpenWrt-Newifi_D2,Actions-OpenWrt,Docker-Aria2-Pro,IBM-CF-V2,aria2.conf"
+          white_list: "debugger-action"
           account_type: org
           rename_dst: true
