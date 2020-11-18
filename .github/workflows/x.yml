@@ -35,3 +35,39 @@ jobs:
           # white_list: "debugger-action"
           account_type: org
           rename_dst: true
+
+      - name: mirror github/horryruo
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/horryruo
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "multi-bot,ikoa-vps"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/mason1901
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/mason1901
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "ikoa-web"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+
+      - name: mirror github/135e2
+        uses: fakedon/hub-mirror@main
+        with:
+          src: github/135e2
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "proxypool"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
