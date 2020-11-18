@@ -31,7 +31,7 @@ jobs:
           dst: github/back8
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          #static_list: "debugger-action"
+          # static_list: "debugger-action"
           white_list: "debugger-action"
           account_type: org
           rename_dst: true
