@@ -34,6 +34,7 @@ jobs:
           static_list: "debugger-action,ssh2actions,ActionsVM,ca-certificates.crt,GeoLite.mmdb,OpenWrt-Newifi_D2,Actions-OpenWrt,Docker-Aria2-Pro,IBM-CF-V2,aria2.conf"
           # white_list: "debugger-action"
           account_type: org
+          force_update: true
           rename_dst: true
 
       - name: mirror github/horryruo
