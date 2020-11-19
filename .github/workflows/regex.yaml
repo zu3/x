@@ -1,0 +1,38 @@
+name: mirror(regex version)
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: mirror
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  mirror:
+    env:
+      PAT: ${{ secrets.PAT }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'fakegit'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: mirror github/P3TERX
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/P3TERX
+          dst: github/back8
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "debugger-action"
+          # white_list: "debugger-action"
+          account_type: org
+          rename_dst: true
+          rename_fmt: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}.\1/g'
