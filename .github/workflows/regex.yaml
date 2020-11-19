@@ -26,7 +26,126 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: mirror github/P3TERX
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/P3TERX
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "debugger-action,ssh2actions,ActionsVM,ca-certificates.crt,GeoLite.mmdb,OpenWrt-Newifi_D2,Actions-OpenWrt,Docker-Aria2-Pro,IBM-CF-V2,aria2.conf"
+          account_type: org
+          force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/horryruo
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/horryruo
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "multi-bot,ikoa-vps"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/mason1901
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/mason1901
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "ikoa-web"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/135e2
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/135e2
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "proxypool"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/wei
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/wei
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "ssr-scraper,pull,git-sync,minifier"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/repo-sync
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/repo-sync
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "pull-request,github-sync,repo-sync"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/deepfakes
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/deepfakes
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "faceswap"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/instantbox
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/instantbox
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "instantbox"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/listen-now
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/listen-now
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "listen-now,listen-now-react,listen-now-desktop"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/mozilla
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/mozilla
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "send,DeepSpeech"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
       - name: mirror github/jiupinjia
         uses: fakedon/hub-mirror@regex
@@ -36,7 +155,151 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "SkyAR"
-          # white_list: "debugger-action"
           account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/microsoft
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/microsoft
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Bringing-Old-Photos-Back-to-Life"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/microsoft
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/microsoft
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Bringing-Old-Photos-Back-to-Life"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/alirezamika
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/alirezamika
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "autoscraper"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/RayWangQvQ
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/RayWangQvQ
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "BiliBiliTool"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/danielgatis
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/danielgatis
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "rembg,puppeteer-recaptcha-solver,imgcat,docscan,facematch"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/ytdl-org
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/ytdl-org
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "youtube-dl"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/OPHoperHPO
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/OPHoperHPO
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "image-background-remove-tool"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Ciphey
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/Ciphey
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Ciphey,enCiphey,CipheyOnline"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/moonD4rk
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/moonD4rk
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "HackBrowserData"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/a-wing
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/a-wing
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "filegogo"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/DIYgod
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/DIYgod
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "DPlayer,RSSHub-Radar,RSSHub,APlayer"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Binaryify
+        uses: fakedon/hub-mirror@regex
+        with:
+          src: github/Binaryify
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "NeteaseCloudMusicApi"
+          account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
