@@ -1,4 +1,4 @@
-name: mirror(regex version)
+name: mirror-regex
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -11,28 +11,33 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: mirror
+    types: mirror-regex
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   mirror:
     env:
       PAT: ${{ secrets.PAT }}
+      DEFAULT_DST: github/back8
+      HUB_MIRROR: 'fakedon/hub-mirror@regex'
+      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}.\1/g'
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'fakegit'
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: mirror github/P3TERX
-        uses: fakedon/hub-mirror@regex
+
+
+      - name: mirror github/jiupinjia
+        uses: ${{ env.HUB_MIRROR }}
         with:
-          src: github/P3TERX
-          dst: github/back8
+          src: github/jiupinjia
+          dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "debugger-action"
+          static_list: "SkyAR"
           # white_list: "debugger-action"
           account_type: org
           rename_dst: true
-          rename_fmt: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}.\1/g'
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
