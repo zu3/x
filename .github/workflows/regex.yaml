@@ -19,7 +19,6 @@ jobs:
     env:
       PAT: ${{ secrets.PAT }}
       DEFAULT_DST: github/back8
-      HUB_MIRROR: 'fakedon/hub-mirror@regex'
       DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}.\1/g'
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'fakegit'
@@ -30,7 +29,7 @@ jobs:
 
 
       - name: mirror github/jiupinjia
-        uses: ${{ env.HUB_MIRROR }}
+        uses: fakedon/hub-mirror@regex
         with:
           src: github/jiupinjia
           dst: ${{ env.DEFAULT_DST }}
