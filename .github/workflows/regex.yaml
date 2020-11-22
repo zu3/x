@@ -252,6 +252,7 @@ jobs:
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Ciphey,enCiphey,CipheyOnline"
           account_type: org
+          force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
