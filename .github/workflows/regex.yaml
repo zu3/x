@@ -34,7 +34,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "debugger-action,ssh2actions,ActionsVM,ca-certificates.crt,GeoLite.mmdb,OpenWrt-Newifi_D2,Actions-OpenWrt,Docker-Aria2-Pro,IBM-CF-V2,aria2.conf"
-          account_type: org
+          dst_account_type: org
           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -47,7 +47,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "multi-bot,ikoa-vps"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -59,7 +59,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "ikoa-web"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -71,7 +71,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "proxypool"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -83,7 +83,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "ssr-scraper,pull,git-sync,minifier"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -95,7 +95,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "pull-request,github-sync,repo-sync"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -107,7 +108,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "faceswap"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -119,7 +120,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "instantbox"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -131,7 +133,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "listen-now,listen-now-react,listen-now-desktop"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -143,7 +146,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "send,DeepSpeech"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -155,7 +159,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "SkyAR"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -167,19 +171,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Bringing-Old-Photos-Back-to-Life,playwright"
-          account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
-      - name: mirror github/microsoft
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/microsoft
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "Bringing-Old-Photos-Back-to-Life"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -191,7 +184,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "autoscraper"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -203,7 +196,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "BiliBiliTool"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -215,7 +208,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "rembg,puppeteer-recaptcha-solver,imgcat,docscan,facematch"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -227,7 +220,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "youtube-dl"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -239,7 +233,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "image-background-remove-tool"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -251,7 +245,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Ciphey,enCiphey,CipheyOnline"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -264,7 +259,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "HackBrowserData"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -276,7 +271,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "filegogo"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -288,7 +283,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "DPlayer,RSSHub-Radar,RSSHub,APlayer"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -300,7 +295,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "NeteaseCloudMusicApi"
-          account_type: org
+          dst_account_type: org
           force_update: true
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
@@ -313,7 +308,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "video-srt-windows,video-srt"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -325,7 +320,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "electron-vue-music"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -337,7 +332,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "lx-music-desktop"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -349,7 +344,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "videoMaker,videoWater,imageMerge,TBPlayer,TTRobot"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -361,7 +356,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "sub-web"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -373,7 +368,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "subconverter,stairspeedtest-reborn"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -385,7 +380,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "SSRSpeed"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -397,7 +392,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "GDA-android-reversing-Tool"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -409,7 +404,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "spiderfoot"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -421,7 +416,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "workers,uuid,scriptservices,zoning,cdn,serverless,netnrv,kms,netnrmd,np,static,guff,proxy,nav"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -433,7 +428,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "proxypool038,v2ray-subscribed"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -445,7 +440,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "better-cloudflare-ip"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -457,7 +452,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "V2RayCloudSpider"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -469,7 +464,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "SSPanel-Uim,shadowsocks-mod"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -481,7 +476,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "proxypool"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -493,7 +488,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "multi-v2ray,docker-install,k8s-install,trojan,python3-install,webssh,trojan-web,nodejs-install,go-install,sshcopy,mysqldump,"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -505,7 +500,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "go-fastdfs,ops_channel"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -517,7 +512,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "freev2"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -529,7 +524,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "free"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -541,7 +536,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "ShadowsocksRRShare"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -553,7 +548,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Share-SSR-V2ray"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -565,7 +560,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "cors-anywhere"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -577,7 +572,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "smartcrop.js"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -589,7 +584,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Luckysheet"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -601,7 +596,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "uplink,uplink-protobuf"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -613,7 +608,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "uplink-httpx"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -625,7 +620,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "ArchiveBox,electron-archivebox,homebrew-archivebox,docs"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -637,7 +633,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "buku,imgp"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -649,7 +645,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "archivematica,atom"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -661,7 +658,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "gpodder"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -673,7 +671,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "CTFd"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -685,7 +684,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "comictagger"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -697,7 +697,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "mylar3"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -709,7 +709,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "myazo"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -721,7 +721,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "mailinabox"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -733,7 +734,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "KindleEar,Forwarder"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -745,7 +746,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "isso"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -757,7 +758,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "hosts"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -769,7 +770,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "newspipe,newsgen"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -781,7 +783,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "NewsBlur"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -792,8 +794,9 @@ jobs:
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+		  src_account_type: org
           static_list: "nyaa"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -805,7 +808,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "pi-hole,AdminLTE"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -817,7 +821,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "transfer.sh,transfer.sh-web"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -829,7 +834,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "pyload,pyload-webui,pyload-android,pyload-bookmarklet"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -841,7 +847,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "pol"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -853,7 +859,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "cloudflare-scrape,PySocks"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -865,7 +871,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "stock,convertible_bond,stockoverview,CrawlMan,CodePool,JS-Reverse,red_bag"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -877,7 +883,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "real-live,real-player,real-live-website,NextChat"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -889,7 +895,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "real-url"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -901,7 +907,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "ItChat,itchatmp,danmu"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -913,7 +919,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "BILIBILI-HELPER"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -925,7 +931,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "bilibili-API-collect"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -937,7 +943,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Profiles"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -949,7 +955,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "mellow"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -961,7 +968,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "go-tun2socks,leaf"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -973,7 +980,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "v2ray-core,V2RayN"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -985,7 +993,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "geoip,v2ray-core"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -997,7 +1006,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "clash,clash-dashboard"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -1009,7 +1018,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "clashX"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -1021,7 +1030,7 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "privacy,shutup"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -1033,7 +1042,8 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "core,fetcher,proxy,web,docker"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
@@ -1045,66 +1055,92 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "sub"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitea/puppeteer
+      - name: mirror github/puppeteer
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: gitea/puppeteer
+          src: github/puppeteer
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "puppeteer,recorder,examples,pptr.dev"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitea/berstend
+      - name: mirror github/berstend
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: gitea/berstend
+          src: github/berstend
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "puppeteer-extra"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitea/geohot
+      - name: mirror github/geohot
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: gitea/geohot
+          src: github/geohot
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "tinygrad,ai-notebooks"
-          account_type: org
+		  src_account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitea/karpathy
+      - name: mirror github/karpathy
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: gitea/karpathy
+          src: github/karpathy
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "micrograd"
-          account_type: org
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitea/Yin-Hongwei
+      - name: mirror github/Yin-Hongwei
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: gitea/Yin-Hongwei
+          src: github/Yin-Hongwei
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "music-website,wangyiyun"
-          account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/porn-vault
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/porn-vault
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "porn-vault,porn-vault-plugins"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/beurtschipper
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/beurtschipper
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Depix"
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
