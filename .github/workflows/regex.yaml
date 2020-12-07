@@ -1053,17 +1053,17 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror gitea/proxypools
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: gitea/proxypools
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "sub"
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+#       - name: mirror gitea/proxypools
+#         uses: fakedon/hub-mirror-action@fakedon
+#         with:
+#           src: gitea/proxypools
+#           dst: ${{ env.DEFAULT_DST }}
+#           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+#           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+#           static_list: "sub"
+#           dst_account_type: org
+#           rename_dst: true
+#           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
       - name: mirror github/puppeteer
         uses: fakedon/hub-mirror-action@fakedon
