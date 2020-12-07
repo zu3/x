@@ -1,0 +1,28 @@
+name: ssh
+
+on:
+#   push:
+#     branches: [main]
+#  schedule:
+#    - cron: '30 3 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: ssh
+
+jobs:
+  ssh:
+    env:
+      PAT: ${{ secrets.PAT }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'fakegit'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Start SSH via tmate
+        uses: P3TERX/ssh2actions@main
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
