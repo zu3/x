@@ -39,9 +39,21 @@ jobs:
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "debugger-action,ssh2actions,ActionsVM,ca-certificates.crt,GeoLite.mmdb,OpenWrt-Newifi_D2,Actions-OpenWrt,Docker-Aria2-Pro,IBM-CF-V2,aria2.conf"
+          static_list: "aria2.sh,debugger-action,ssh2actions,ActionsVM,ca-certificates.crt,GeoLite.mmdb,OpenWrt-Newifi_D2,Actions-OpenWrt,Docker-Aria2-Pro,IBM-CF-V2,aria2.conf"
           dst_account_type: org
           force_update: true
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/mayswind
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/mayswind
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "AriaNg,lab,AriaNg-Native,PuTTY-ng,AriaNg-DailyBuild,AriaNg-WebSite"
+          dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
