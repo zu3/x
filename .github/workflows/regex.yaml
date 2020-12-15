@@ -792,18 +792,6 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror github/StevenBlack
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/StevenBlack
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "hosts"
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
       - name: mirror github/NewsPipe
         uses: fakedon/hub-mirror-action@fakedon
         with:
@@ -977,18 +965,6 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror github/DivineEngine
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/DivineEngine
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "Profiles"
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
       - name: mirror github/mellow-io
         uses: fakedon/hub-mirror-action@fakedon
         with:
@@ -998,68 +974,6 @@ jobs:
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "mellow"
           src_account_type: org
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
-      - name: mirror github/eycorsican
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/eycorsican
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "go-tun2socks,leaf"
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
-      - name: mirror github/v2ray
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/v2ray
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "v2ray-core,V2RayN"
-          src_account_type: org
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
-      - name: mirror github/v2fly
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/v2fly
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "geoip,v2ray-core"
-          src_account_type: org
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
-      - name: mirror github/Dreamacro
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/Dreamacro
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "clash,clash-dashboard"
-          dst_account_type: org
-          rename_dst: true
-          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
-
-      - name: mirror github/yichengchen
-        uses: fakedon/hub-mirror-action@fakedon
-        with:
-          src: github/yichengchen
-          dst: ${{ env.DEFAULT_DST }}
-          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
-          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "clashX"
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
