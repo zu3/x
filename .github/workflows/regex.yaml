@@ -1163,3 +1163,28 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/BetaCatPro
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/BetaCatPro
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Joint-spiders,HouseAnalysisWeb,HousePrcieAnalysis,qiushibaike,Music,yuGo,vue-todo,shareBook,VueShop,OnlineShop,Bug-saas,md-manager"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/scrapinghub
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/scrapinghub
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "frontera,splash,dateparser,python-scrapinghub,extruct,spidermon,python-crfsuite,autoextract-poet,scrapy-poet,price-parser,autoextract-spiders,docker-images,spidyquotes,shublang,crawlera-headless-proxy,number-parser,varanus,web-poet,portia,scrapyrt,scrapy-frontera,arche"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
