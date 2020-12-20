@@ -92,6 +92,18 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/Hunlongyu
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Hunlongyu
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "ZY-Player,ZY-Player-APP,ZY-Player-TV,ZY-Player-Web"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/guyueyingmu
         uses: fakedon/hub-mirror-action@fakedon
         with:
@@ -103,3 +115,16 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/HeiSir2014
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/HeiSir2014
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "M3U8-Downloader"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
