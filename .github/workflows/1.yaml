@@ -1,0 +1,81 @@
+name: 1
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+#   push:
+#     branches: [main]
+  schedule:
+    - cron: '50 5 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: 1
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  mirror:
+    env:
+      PAT: ${{ secrets.PAT }}
+      DEFAULT_DST: github/back8
+      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'fakegit'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: | 
+            "${{ github.workspace }}/.cache"
+          key: ${{ runner.os }}-cache-actions
+
+      - name: mirror github/KagurazakaNyaa
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/KagurazakaNyaa
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "privacy"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/KagurazakaNyaa
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/KagurazakaNyaa
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "nagadomi"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/soimort
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/soimort
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "you-get,dotfiles,translate-shell,akb48.js"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/koalaman
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/koalaman
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "shellcheck,shellcheck.net"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
