@@ -625,3 +625,40 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/vitalik
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/vitalik
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "django-ninja,django-prototyper"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/tiangolo
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/tiangolo
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "fastapi,typer,typer-cli,full-stack-fastapi-postgresql,uvicorn-gunicorn-docker,meinheld-gunicorn-flask-docker,uwsgi-nginx-docker,uwsgi-nginx-flask-docker,uvicorn-gunicorn-fastapi-docker,dockerswarm.rocks,uvicorn-gunicorn-starlette-docker,meinheld-gunicorn-docker,node-frontend,nginx-rtmp-docker,uvicorn-gunicorn-machine-learning-docker,full-stack-fastapi-couchbase,flask-frontend-docker,full-stack"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/PyAV-Org
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/PyAV-Org
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "PyAV"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
