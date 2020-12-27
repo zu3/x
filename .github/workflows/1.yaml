@@ -784,3 +784,64 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/hitchao
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/hitchao
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Jvedio"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/yoshiko2
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/yoshiko2
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "AV_Data_Capture"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/ddd354
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/ddd354
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "JAVOneStop"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/xinxin8816
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/xinxin8816
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "gfriends"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/openmediavault
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/openmediavault
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "openmediavault"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
