@@ -919,3 +919,28 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/crawlab-team
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/crawlab-team
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "crawlab,crawlab-core,artipub,crawlab-log,crawlab-fs,crawlab-vcs,crawlab-docs,crawlab-frontend,crawlab-db,crawlab-tools,crawlab-lite,crawlab-sdk,crawlab-go-sdk,cloudafford,artipub,crawlab-plugins"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/dushixiang
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/dushixiang
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "next-terminal"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
