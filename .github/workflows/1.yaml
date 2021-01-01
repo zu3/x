@@ -969,3 +969,27 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/metowolf
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/metowolf
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Meting,Meting-API,BilibiliHelper,upimg,upimg-cli"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/jsososo
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/jsososo
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "QQMusicApi,NeteaseMusic,MiguMusicApi,qqmusic-cookie-porter,MixMusicApi,music-player"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
