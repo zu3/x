@@ -419,3 +419,39 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Limerance6
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Limerance6
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "luffy-sama"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/JieErJingFu
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/JieErJingFu
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "FreeNodesTrojanVmessSSRSS"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/adiwzx
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/adiwzx
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "freenode"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
