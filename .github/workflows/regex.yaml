@@ -1433,3 +1433,16 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/scp-079
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/scp-079
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "scripts,scp-079-tip,scp-079-captcha,scp-079-status,scp-079-id,scp-079-user,scp-079-clean,scp-079-config,scp-079-manage,scp-079-lang,scp-079-noporn,scp-079-noflood,scp-079-long,scp-079-nospam,foxygfw,scp-079-warn,scp-079-watch,scp-079-regex,scp-079-hide,scp-079-avatar,scp-079-pm,docs,manuals,screen"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
