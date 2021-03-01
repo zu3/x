@@ -1283,6 +1283,18 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/T3rry7f
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/T3rry7f
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Fake115Upload,WideVineDump"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/Sainan
         uses: fakedon/hub-mirror-action@fakedon
         with:
