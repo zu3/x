@@ -1295,6 +1295,18 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/HaujetZhao
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/HaujetZhao
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "ali-audio-text-sync,ali-audio-to-srt,windows-batch-script,JumpCutter2,audio-video-resync,CapsWriter,QuickCut,python-template"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/Sainan
         uses: fakedon/hub-mirror-action@fakedon
         with:
@@ -1303,6 +1315,19 @@ jobs:
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "Universal-Bypass"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/filebrowser
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/filebrowser
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "filebrowser"
+          src_account_type: org
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
