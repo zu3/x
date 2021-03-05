@@ -44,14 +44,14 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
-      - name: mirror github/KagurazakaNyaa
+      - name: mirror github/nagadomi
         uses: fakedon/hub-mirror-action@fakedon
         with:
-          src: github/KagurazakaNyaa
+          src: github/nagadomi
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "nagadomi"
+          static_list: "waifu2x"
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
