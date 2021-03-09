@@ -45,6 +45,32 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/streamlit
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/streamlit
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "streamlit"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/nonebot
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/nonebot
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "nb-cli,nonebot2,nonetrip,nonebot,plugin-test,aiocqhttp,vuepress-theme-nonebot,plugin-apscheduler,nonebot-anime,nonebot-alarm,nonebot-tuling"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/python-visualization
         uses: fakedon/hub-mirror-action@fakedon
         with:
