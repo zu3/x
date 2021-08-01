@@ -944,3 +944,63 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/iperov
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/iperov
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "DeepFaceLab,DeepFaceLive,litenn"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/yaronzz
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/yaronzz
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "baiduyuntoaliyun"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Hidove
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Hidove
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "aliyundrive-uploader,CloudflarePanelPython,goindex"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/wxy1343
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/wxy1343
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "aliyunpan,freemyv2rayssr"
+          dst_account_type: org
+          rename_dst: true
+
+      - name: mirror github/PaddlePaddle
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/PaddlePaddle
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "PaddleDetection,Paddle,PaddleNLP,PaddleOCR,PaddleX,PaddleRec,PaddleVideo,PaddleGAN,Serving"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
