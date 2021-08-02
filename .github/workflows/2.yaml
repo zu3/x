@@ -991,6 +991,7 @@ jobs:
           static_list: "aliyunpan,freemyv2rayssr"
           dst_account_type: org
           rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
       - name: mirror github/PaddlePaddle
         uses: fakedon/hub-mirror-action@fakedon
@@ -1001,6 +1002,42 @@ jobs:
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
           static_list: "PaddleDetection,Paddle,PaddleNLP,PaddleOCR,PaddleX,PaddleRec,PaddleVideo,PaddleGAN,Serving"
           src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/boramalper
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/boramalper
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "magnetico"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/urbanguacamole
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/urbanguacamole
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "torrent-paradise"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/varbhat
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/varbhat
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "torpar"
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
