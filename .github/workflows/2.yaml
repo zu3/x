@@ -437,6 +437,31 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/rclone
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/rclone
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "rclone,rclone-webui-react,rclone-js-api"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/mawaya
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/mawaya
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "rclone"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/NyaMisty
         uses: fakedon/hub-mirror-action@fakedon
         with:
