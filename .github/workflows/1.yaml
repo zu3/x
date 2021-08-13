@@ -1290,7 +1290,20 @@ jobs:
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "Fake115Upload,WideVineDump"
+          static_list: "Fake115Upload,WideVineDump,NoDRM,MITM-Scripts,Hijacker"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/gchq
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/gchq
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "CyberChef"
+          src_account_type: org
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
