@@ -1137,3 +1137,27 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/Baiyuetribe
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/Baiyuetribe
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "kamiFaka,glink,alist_fiber,baiyue_onekey,express-ffmpeg-docker"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/5ime
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/5ime
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "API-Admin,video_spider,images_spider,vue-page"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
