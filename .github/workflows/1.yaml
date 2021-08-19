@@ -1139,6 +1139,18 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/babysor
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/babysor
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Realtime-Voice-Clone-Chineseg"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
       - name: mirror github/Hiroshiba
         uses: fakedon/hub-mirror-action@fakedon
         with:
