@@ -1,0 +1,47 @@
+
+name: 3
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+#   push:
+#     branches: [main]
+  schedule:
+    - cron: '35 11 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: 2
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  mirror:
+    env:
+      PAT: ${{ secrets.PAT }}
+      DEFAULT_DST: github/back8
+      DEFAULT_RENAME_FMT: 's/(.*)/${SRC_TYPE}_${SRC_ACCOUNT}_\1/g'
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id || github.event.sender.login == 'fakegit'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: | 
+            "${{ github.workspace }}/.cache"
+          key: ${{ runner.os }}-cache-actions
+
+
+      - name: mirror github/webrecorder
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/webrecorder
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
