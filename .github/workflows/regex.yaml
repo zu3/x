@@ -1467,7 +1467,7 @@ jobs:
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "freqtrade,frequi,technical,freqtrade-strategies"
+#           static_list: "freqtrade,frequi,technical,freqtrade-strategies"
           src_account_type: org
           dst_account_type: org
           rename_dst: true
