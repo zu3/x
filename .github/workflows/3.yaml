@@ -312,3 +312,16 @@ jobs:
           dst_account_type: org
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
+
+      - name: mirror github/caprover
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/caprover
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "caprover,caprover-cli,one-click-apps,nginx-reverse-proxy,nginx-redirect,certbot-sleeping,netdata-docker"
+          src_account_type: org
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
