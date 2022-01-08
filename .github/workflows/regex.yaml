@@ -1454,7 +1454,7 @@ jobs:
           dst: ${{ env.DEFAULT_DST }}
           dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
-          static_list: "YYeTsBot,Webhook,Shredder,BotsRunner,NCMBot,TeleTweet,KeepMeBot,archiver,DailyGakki,BagAndDrag,wp-comments-tgbot,ExpressBot,ServerSan,Timer"
+#           static_list: "YYeTsBot,Webhook,Shredder,BotsRunner,NCMBot,TeleTweet,KeepMeBot,archiver,DailyGakki,BagAndDrag,wp-comments-tgbot,ExpressBot,ServerSan,Timer"
           src_account_type: org
           dst_account_type: org
           rename_dst: true
