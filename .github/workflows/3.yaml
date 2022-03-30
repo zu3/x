@@ -1167,3 +1167,14 @@ jobs:
           rename_dst: true
           rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
 
+      - name: mirror github/nikitasius
+        uses: fakedon/hub-mirror-action@fakedon
+        with:
+          src: github/nikitasius
+          dst: ${{ env.DEFAULT_DST }}
+          dst_key: ${{ secrets.FAKEGIT_GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.FAKEGIT_GITHUB_TOKEN }}
+          static_list: "Telegraher"
+          dst_account_type: org
+          rename_dst: true
+          rename_fmt: ${{ env.DEFAULT_RENAME_FMT }}
